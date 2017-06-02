@@ -472,13 +472,13 @@ static void display_help()
 		"  -d or --daemon\n"
 		"                       (daemon mode)\n"
 		"  -p <port> or --port=<port>\n"
-		"                       (local bind port, default 53)\n"
+		"                       (local bind port, default 8053)\n"
 		"  -R <ip> or --remote-addr=<ip>\n"
 		"                       (remote server ip, default 8.8.8.8)\n"
 		"  -P <port> or --remote-port=<port>\n"
 		"                       (remote server port, default 53)\n"
-		"  -T or --remote-tcp\n"
-		"                       (connect remote server in tcp, default no)\n"
+//		"  -T or --remote-tcp\n"
+//		"                       (connect remote server in tcp, default no)\n"
 		"  -f <file> or --hosts-file=<file>\n"
 		"                       (user-defined hosts file)\n"
 		"  -h, --help           (print help and exit)\n"
@@ -493,11 +493,11 @@ int main(int argc, const char* argv[])
 	int opt, optind;
 	const char *optarg;
 	int use_daemon = 0;
-	int remote_tcp = 0;
+	int remote_tcp = 1;
 	int transport_timeout = 5;
 	const char *hosts_file = NULL;
 	const char *remote_addr = "8.8.8.8";
-	unsigned short local_port = 53, remote_port = 53;
+	unsigned short local_port = 8053, remote_port = 53;
 
 	optind = 0;
 	opt = xgetopt(argc, argv, options, &optind, &optarg);
